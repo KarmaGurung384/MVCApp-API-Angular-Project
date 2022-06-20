@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ShipperModel>
+<a asp-action="Create" asp-controller="Shipper" class="btn btn-success">Add Shipper</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var p in Model)
+            {
+               <partial name="_ShipperRow" model="@p"></partial>
+            }
+        }
+    </tbody>
+</table>

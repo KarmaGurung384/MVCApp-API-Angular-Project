@@ -1,0 +1,18 @@
+﻿@model IEnumerable<RegionModel>
+<a asp-action="Create" asp-controller="Region" class="btn btn-success" >Add Region</a>
+<table class="table table-striped">
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      @foreach(var m in Model)
+        {
+            <partial name="_RegionRow" model="@m"></partial>
+        }
+    </tbody>
+</table>

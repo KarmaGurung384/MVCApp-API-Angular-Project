@@ -1,0 +1,31 @@
+﻿<!-- index.cshtml is a razor view 
+    razor is a viewengine, it will convert the C# code to the script code which a browser can understand
+-->
+@model IEnumerable<ProductResponseModel>
+<a asp-action="Create" asp-controller="Product" class="btn btn-success">Add Product</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Supplier Id</th>
+            <th>Category Id</th>
+            <th>Quantity Per Unit</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+            <th>Units On Order</th>
+            <th>Reorder Level</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var p in Model)
+            {
+               <partial name="_ProductRow" model="@p"></partial>
+            }
+        }
+    </tbody>
+</table>

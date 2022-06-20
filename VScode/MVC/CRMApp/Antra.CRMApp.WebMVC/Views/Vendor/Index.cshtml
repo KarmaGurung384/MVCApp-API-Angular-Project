@@ -1,0 +1,25 @@
+﻿@model IEnumerable<VendorResponseModel>
+<a asp-action="Create" asp-controller="Vendor" class="btn btn-success">Add Supplier</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var p in Model)
+            {
+               <partial name="_VendorRow" model="@p"></partial>
+            }
+        }
+    </tbody>
+</table>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "t7eseTUoQWPx90q85UUiEQZXsfVOSDBHq00sZ9tAcBk=",
+  "Source": "Antra.CrmAPI",
+  "BasePath": "_content/Antra.CrmAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
