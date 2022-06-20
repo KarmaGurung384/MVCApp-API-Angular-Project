@@ -1,0 +1,15 @@
+<div class="mb-3">
+    <label>Enter a ID</label>
+   <input [(ngModel)]="product.id" class="form-control"/>
+</div>
+<div class="mb-3">
+    <label>Enter Name</label>
+   <input [(ngModel)]="product.name" class="form-control"/>
+</div>
+<div class="mb-3">
+    <label>Enter a Price</label>
+   <input [(ngModel)]="product.price" class="form-control"/>
+</div>
+<div>
+    <input type="button" value="Add Product" class="btn btn-primary" (click)="addProduct()"/>
+</div>
