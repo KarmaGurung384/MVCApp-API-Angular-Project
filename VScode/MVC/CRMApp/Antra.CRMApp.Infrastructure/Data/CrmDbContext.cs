@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Antra.CRMApp.Infrastructure.Data;
 using Antra.CRMApp.Core.Entity;
-
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Antra.CRMApp.Infrastructure.Data
 {
-    public class CrmDbContext:DbContext
+    public class CrmDbContext:IdentityDbContext<ApplicationUser>
     {
         public CrmDbContext(DbContextOptions<CrmDbContext> option):base(option)
         { 

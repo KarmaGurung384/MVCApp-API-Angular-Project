@@ -1,5 +1,6 @@
 ﻿using Antra.CRMApp.Core.Contract.Service;
 using Antra.CRMApp.Core.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace Antra.CrmWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class RegionController : ControllerBase
     {
         private readonly IRegionServiceAsync regionServiceAsync;
@@ -60,7 +62,10 @@ namespace Antra.CrmWebAPI.Controllers
         {
             var result = await regionServiceAsync.DeleteRegionAsync(id);
             if (result != 0)
-                return Ok("Region Deleted Successfully");
+            {
+                var response = new { Message = "Region Deleted Successfully" };
+                return Ok(response);
+            }
             return BadRequest();
         }
     }

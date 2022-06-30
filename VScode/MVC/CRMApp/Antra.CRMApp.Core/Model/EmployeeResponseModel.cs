@@ -22,6 +22,8 @@ namespace Antra.CRMApp.Core.Model
 
         public string Phone { get; set; }
 
+        public string RegionName { get; set; }
+
 
     }
 }
