@@ -1,0 +1,45 @@
+
+<!-- this is template driven form for the 2 way binsing 
+    <div class="mb-3">
+    <label for="txtLName"> RegionID </label>
+    <input id="txtLName" [(ngModel)]="region.id" name="LastName" class="form-control"/>
+</div>
+<div class="mb-3">
+    <label for="txtLName"> RegionName  </label>
+    <select id="txtLName" [(ngModel)]="region.name" name="LastName" class="form-control">
+    <option value="0">Select</option>
+    <option value="1">Northern</option>
+    <option value="">Southern</option>
+    <option value="">Western</option>
+    <option value="">Eastern</option>
+   </select>
+</div>
+
+<input type="submit" value="Add Region" class="btn btn-primary"/> -->
+
+<div *ngIf="isSuccessful" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Region has been Saved!</strong>
+  <a [routerLink]="'/region/list'"> Go to Region List</a>
+ 
+</div>
+<h1 class="display-4"> Add region</h1>
+<hr>
+<form [formGroup]="addRegionForm">
+    <div class="form-grgoup mb-3">
+        <label> Enter region name </label>
+  <input type="text" formControlName="regionName" class="form-control"/>
+   
+  <div class="text-danger" *ngIf="addRegionForm.get('regionName')?.hasError('required') && addRegionForm.get('regionName')?.touched">
+    Region is required
+  </div>
+  <div class="text-danger" *ngIf="addRegionForm.get('regionName')?.hasError('minlength') && addRegionForm.get('regionName')?.touched">
+    Minimum 4 characters are required 
+  </div>
+ 
+  </div>
+  <!-- <div class="form-group mb-3">
+    <label> Region Description</label>
+  <textarea formControlName="regionDescription" class="form-control"></textarea>
+</div>-->
+<input type="button" class="btn btn-primary" [disabled]="!addRegionForm.valid" value="Save region" (click)="saveRegion()"/>
+</form>

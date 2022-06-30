@@ -1,0 +1,101 @@
+
+<form #addEmployee="ngForm"(submit)="insertEmployee(addEmployee)">
+  <div class="row">
+     <div class="col-4">
+        <div class="mb-3">
+            <label for="txtFName"> First Name </label>
+            <input [(ngModel)]="employee.FirstName" name="FirstName" class="form-control"/>
+            </div>
+     </div>
+     <div class="col-4">
+        <div class="mb-3">
+            <label for="txtLName"> Last Name </label>
+            <input id="txtLName" [(ngModel)]="employee.LastName" name="LastName" class="form-control"/>
+        </div>
+     </div>
+     <div class="col-4">
+        <div class="mb-3">
+            <label for="txtTitle"> Title </label>
+            <input id="txtTitle" [(ngModel)]="employee.Title" name="Title" class="form-control"/>
+        </div>
+     </div>
+  </div>  
+   <div class="row">
+     <div class="col-4">
+        <div class="mb-3">
+            <label for="ddlCourstesy"> TitleOfCourtesy </label>
+            <select id="ddlCourstesy" [(ngModel)]="employee.TitleOfCourtesy" name="TitleOfCourtesy" class="form-control">
+                 <option value="0">Select</option>
+                 <option value="1">Mr</option>
+                 <option value="2" >Ms</option>
+                 <option value="3">Mrs</option>
+                </select>
+           </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtPhoneN"> Phone Number </label>
+                <input id="txtPhoneN" [(ngModel)]="employee.PhoneNumber" name="phone" class="form-control"/>
+            </div>
+
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="ddlreportsto"> ReportsTo </label>
+             <select id="ddlreportsto" [(ngModel)]="employee.reportsTo" name="reportsTo" class="form-control">
+                 <option value="0">Select</option>
+                 <option value="1">Sam</option>
+                 <option value="2">Tim</option>
+            </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txthireDate"> HireDate </label>
+                <input type="date" id="txthireDate" [(ngModel)]="employee.hireDate" name="HireDate" class="form-control"/>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtbirthDate"> BirthDate </label>
+                <input type="date" id="txtbirthDate" [(ngModel)]="employee.birthDate" name="birthdate" class="form-control"/>
+            </div>
+        </div>
+         <div class="col-4">
+            <div class="mb-3">
+                <label for="txtaddress"> Address </label>
+                <input id="txtaddress" [(ngModel)]="employee.Country" name="address" class="form-control"/>
+            </div>
+
+         </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtCity"> City </label>
+                <input id="txtCity" [(ngModel)]="employee.City" name="City" class="form-control"/>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtregion"> Region</label>
+                <input id="txtregion" [(ngModel)]="employee.region" name="region " class="form-control"/>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtcountry"> Country </label>
+                <input id="txtcountry" [(ngModel)]="employee.Country" name="country " class="form-control"/>
+            </div>
+        </div>
+
+    </div>
+    
+    <input type="submit" value="Add Employee" class="btn btn-primary"/>
+</form>
+
+
